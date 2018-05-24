@@ -1,1 +1,20 @@
 language: node_js
+node_js:
+# - "0.11"
+- "9.11"
+before_install:
+# - command1
+# - command2
+before_script:
+# - php composer.phar install
+# - php app/console xxxx
+  - "npm install"
+script:
+# - phpunit -c app
+# - phantomjs xxxx/run-jasmine.js xxxx/test.html
+notifications:
+emails:
+# - aa@example.com
+  - sho@oshiire.to
+on_success: always # default: change
+on_failure: always
