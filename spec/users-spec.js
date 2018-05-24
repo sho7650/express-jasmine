@@ -1,13 +1,12 @@
-var request = require('request');
-var users_url = 'http://localhost:3000/users/';
+var request = require('supertest');
+var base_url = 'http://localhost:3000/';
 
 describe("/users", function () {
   describe("GET /", function () {
     it("returns OK, ", function () {
-      request.get(users_url, function (err, res, body) {
-        expect(res.statusCode).toBe(200);
-        done();
-      })
+      request(base_url)
+      .get('/users')
+      .expect(200);
     })
   });
 });
