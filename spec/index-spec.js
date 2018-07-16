@@ -14,4 +14,14 @@ describe("/", function () {
       });      
     })
   })
+  describe("GET 404", function() {
+    it("returns OK", function() {
+      request(app)
+      .get('/404')
+      .expect(404)
+      .end(function(err, res) {
+        if (err) throw err;
+      });      
+    })
+  })
 });
