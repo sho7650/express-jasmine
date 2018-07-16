@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 # - "0.11"
-- "9.11"
+- "10.1"
 before_install:
 # - command1
 # - command2
@@ -9,6 +9,8 @@ before_script:
 # - php composer.phar install
 # - php app/console xxxx
   - "npm install"
+  - "sequelize db:migrate"
+  - "sequelize db:seed:all"
 script:
 # - phpunit -c app
 # - phantomjs xxxx/run-jasmine.js xxxx/test.html
